@@ -1,0 +1,139 @@
+.obpress-contact-form-holder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.obpress-contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.obpress-input-holder {
+  margin-bottom: 33px;
+}
+
+.obpress-input-holder input {
+  width: 100%;
+  border: 1px solid #c5c5c5;
+  border-radius: 0px;
+  padding: 13.81px 16px 13.19px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.obpress-input-holder textarea {
+  width: 100%;
+}
+
+.obpress-input-split-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.obpress-input-split-holder input {
+  width: 48%;
+}
+
+.hotels_dropdown {
+  display: none;
+}
+
+.hotels_dropdown {
+  width: 280px;
+  max-height: 336px;
+  z-index: 12;
+  overflow: overlay;
+  position: absolute;
+  color: #212529;
+  background: #f5f5f5;
+  font-size: 14px;
+  display: none;
+  top: 200px;
+  left: 0px;
+}
+
+.hotels_dropdown::-webkit-scrollbar {
+  width: 12px;
+}
+
+.hotels_dropdown::-webkit-scrollbar {
+  width: 12px;
+}
+
+.hotels_dropdown::-webkit-scrollbar-thumb {
+  border-left: 10px solid #000000;
+}
+
+.hotels_dropdown::-webkit-scrollbar-track {
+  border-left: 10px solid #e8e8e8;
+  margin-top: 19px;
+  margin-bottom: 25px;
+}
+
+/* overflow need to be auto for mozila */
+@-moz-document url-prefix() {
+  .hotels_dropdown {
+    overflow: auto;
+  }
+}
+
+.hotels_hotel {
+  font-weight: normal;
+  padding-left: 30px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+  background-image: url(../icons/hotel_v4.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 42px;
+  font-family: "Montserrat";
+  background-color: #fff !important;
+}
+
+.hotels_all,
+.hotels_folder,
+.hotels_hotel {
+  opacity: 1;
+  height: 40px;
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 40px;
+  background: #f5f5f5;
+  color: #212529;
+  font-weight: bold;
+}
+
+.obpress-contact-submit {
+  background-color: #000000;
+  padding: 16px 29px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2.8px;
+  font-family: "Montserrat", sans-serif;
+  border-width: 0px;
+  max-width: 231px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MOBILE */ 
+@media(max-width: 1279px) {
+
+  .obpress-contact-form-holder {
+    padding: 0px 20px 35px 20px;
+  }
+
+  .obpress-input-holder {
+    margin-bottom: 29px;
+  }
+
+  .obpress-contact-submit {
+    padding: 11px 46px;
+    font-size: 14px;
+  }
+}
