@@ -29,7 +29,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 
 	public function get_title()
 	{
-		return __('Demo Contact Form', 'plugin-name');
+		return __('Demo Contact Form', 'OBPress_Contact_Form');
 	}
 
 	public function get_icon()
