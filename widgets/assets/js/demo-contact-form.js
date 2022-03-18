@@ -254,26 +254,83 @@ jQuery(window).on("elementor/frontend/init", function () {
         }
       });
 
+
+
+
+
+
+      // check if every input is corret and send mail
       $(document).on('click', '.obpress-contact-submit', function(e){
-        e.preventDefault();
-        var action = "send_mail";
-        var data = {};
-        data.action = action;
 
-        var msg = {};
-        msg.name = $('.name-input').val();
-        msg.email = $('.email-input').val();
-        msg.phone = $('.phone-input').val();
-        msg.hotel = $('.hotel-input').val();
-        msg.message = $('.message-input').val();
-      
-        data.msg = msg;
+          e.preventDefault();
+
+          $(".obpress-contact-form span").hide();
+          var action = "send_mail";
+          var data = {};
+          data.action = action;
+          var errors = false;
+
+          function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+          }
+
+          if ( $('.name-input').val() == "" ) {
+            $("#obpress-contact-form-name-warning").css("display","inline-block");
+            errors = true;
+          }
+
+          if ( $('.phone-input').val() == "" ) {
+            $("#obpress-contact-form-phone-warning").css("display","inline-block");
+            errors = true;
+          }
+
+          if (  isEmail(  $('.email-input').val() ) == false )  {
+            $("#obpress-contact-form-email-warning").css("display","inline-block");
+            errors = true;
+          } 
+
+          if ( $(".message-input").val().length == 0 ) {
+            $("#obpress-contact-form-message-warning").css("display","inline-block");    
+            errors = true;    
+          }
+
+          if (errors == true) {
+            return;
+          }
+          
+
+          var msg = {};
+          msg.name = $('.name-input').val();
+          msg.email = $('.email-input').val();
+          msg.phone = $('.phone-input').val();
+          msg.hotel = $('.hotel-input').val();
+          msg.message = $('.message-input').val();
         
-        $.post(contactAjax.ajaxurl, data, function(res){
-          console.log(res);
-        })
+          data.msg = msg;
+          
+          $.post(contactAjax.ajaxurl, data, function(res){
+            $("#obpress-contact-form-success").css("display","inline-block"); 
+            $(".obpress-contact-form input, .obpress-contact-form textarea").val("");
+          })
+          
 
-      })
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
   );
 });

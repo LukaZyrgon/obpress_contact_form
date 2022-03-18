@@ -1,0 +1,82 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OBPress Contact Form by Zyrgon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-18 14:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8\n"
+"X-Domain: OBPress_Contact_Form"
+
+#: widgets/assets/templates/demo-contact-form.php:5
+msgid "Contact us"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:15
+msgid "Email"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:16
+msgid "Email is incorrect"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:37
+msgid "Enter your message"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:9
+msgid "Enter your name"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:21
+msgid "Enter your phone"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:28
+msgid "Hotel"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:36
+msgid "Message"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:8
+msgid "Name"
+msgstr ""
+
+#. Name of the plugin
+msgid "OBPress Contact Form by Zyrgon"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:20
+msgid "Phone"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:40
+msgid "Submit"
+msgstr ""
+
+#. Description of the plugin
+msgid "Widgets to OBPress"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "www.zyrgon.net"
+msgstr ""
+
+#: widgets/assets/templates/demo-contact-form.php:41
+msgid "Your message has been succesfully sent"
+msgstr ""
+
+#. Author of the plugin
+msgid "Zyrgon"
+msgstr ""
