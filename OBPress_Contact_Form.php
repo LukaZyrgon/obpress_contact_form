@@ -20,7 +20,7 @@ require_once(WP_PLUGIN_DIR . '/OBPress_Contact_Form/plugin-update-checker-4.11/p
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'https://github.com/LukaZyrgon/obpress_contact_form',
     __FILE__,
-    'OBPress_Demo_Widgets'
+    'OBPress_Contact_Form'
 );
 
 //Set the branch that contains the stable release.
