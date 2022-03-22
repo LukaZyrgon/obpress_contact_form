@@ -61,6 +61,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 				'label' => esc_html__( 'On which email to receive messages?', 'OBPress_Contact_Form' ),
 				'min' => 20,
 				'max' => 100,
+				'label_block' => true
 			]
 		);
 
@@ -73,7 +74,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 
 	protected function render()
 	{
-		
+
 		$settings = $this->get_settings_for_display();
 
 		$prevIcon = "url('../icons/back.svg')";
