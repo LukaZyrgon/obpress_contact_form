@@ -2,8 +2,6 @@
 
     <form class="obpress-contact-form" data-hotel-folders="<?php echo htmlspecialchars(json_encode($hotelFolders), ENT_QUOTES, 'UTF-8'); ?>">
 
-        <h2 class="obpress-contact-form-title"><?php _e('Contact us', 'OBPress_Contact_Form') ?></h2>
-
         <div class="obpress-input-holder">
             <input type="text" name="name" placeholder="<?php _e('Name', 'OBPress_Contact_Form') ?>" class="name-input">
             <span id="obpress-contact-form-name-warning"><?php _e('Enter your name', 'OBPress_Contact_Form') ?></span>

@@ -45,10 +45,35 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 	protected function _register_controls()
 	{
 
+		// Add option for user to choose in which e-mail messsages will be received
+		$this->start_controls_section(
+			'email',
+			[
+				'label' => esc_html__( 'Email', 'OBPress_Contact_Form' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT
+			]
+		);
+
+		$this->add_control(
+			'obpress_contact_email',
+			[
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => esc_html__( 'On which email to receive messages?', 'OBPress_Contact_Form' ),
+				'min' => 20,
+				'max' => 100,
+			]
+		);
+
+
+		$this->end_controls_section();
+
 	}
+
+
 
 	protected function render()
 	{
+		
 		$settings = $this->get_settings_for_display();
 
 		$prevIcon = "url('../icons/back.svg')";
