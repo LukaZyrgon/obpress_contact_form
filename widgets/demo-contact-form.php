@@ -65,6 +65,189 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'main_style_section',
+			[
+				'label' => __('Form Main Style', 'OBPress_Contact_Form'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'form_inputs_margin',
+			[
+				'label' => __( 'Inputs Margin', 'OBPress_Contact_Form' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '33',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-input-holder' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'form_inputs_border',
+				'label' => __( 'Inputs Border', 'OBPress_Contact_Form' ),
+				'fields_options' => [
+					'border' => [
+						'default' => 'solid',
+					],
+					'width' => [
+						'default' => [
+							'top' => '1',
+							'right' => '1',
+							'bottom' => '1',
+							'left' => '1',
+							'isLinked' => true,
+						],
+					],
+					'color' => [
+						'default' => '#c5c5c5',
+					],
+				],
+				'selector' => '.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea',
+			]
+		);
+
+		$this->add_control(
+			'form_inputs_border_radius',
+			[
+				'label' => __( 'Inputs Border Radius', 'OBPress_Contact_Form' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'form_inputs_padding',
+			[
+				'label' => __( 'Inputs Padding', 'OBPress_Contact_Form' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'default' => [
+					'top' => '14',
+					'right' => '16',
+					'bottom' => '13',
+					'left' => '16',
+					'isLinked' => false
+				],
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'form_inputs_bg_color',
+			[
+				'label' => __('Inputs Background Color', 'OBPress_Contact_Form'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#fff',
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea' => 'background-color: {{form_inputs_bg_color}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'form_inputs_fonts_color',
+			[
+				'label' => __('Inputs Fonts Color', 'OBPress_Contact_Form'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'input_type' => 'color',
+				'default' => '#000',
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-input-holder input' => 'color: {{form_inputs_fonts_color}}',
+					'.obpress-contact-form-holder .obpress-input-holder textarea' => 'color: {{form_inputs_fonts_color}}',
+					'.obpress-contact-form-holder .obpress-input-holder input::placeholder' => 'color: {{form_inputs_fonts_color}}',
+					'.obpress-contact-form-holder .obpress-input-holder textarea::placeholder' => 'color: {{form_inputs_fonts_color}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'form_inputs_fonts_typography',
+				'label' => __('Cards Room Icons Typography', 'OBPress_Contact_Form'),
+				'selector' => '.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea, .obpress-contact-form-holder .obpress-input-holder input::placeholder, .obpress-contact-form-holder .obpress-input-holder textarea::placeholder',
+				'fields_options' => [
+					'typography' => [
+						'default' => 'yes'
+					],
+					'font_family' => [
+						'default' => 'Montserrat',
+					],
+					'font_size' => [
+						'default' => [
+							'unit' => 'px',
+							'size' => '14',
+						],
+					],
+					'font_weight' => [
+						'default' => '400',
+					],
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'main_style_section',
+			[
+				'label' => __('Form Main Style', 'OBPress_Contact_Form'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'button_alignment',
+			[
+				'label' => __( 'Button Alignment', 'OBPress_Contact_Form' ),
+				'type' => \Elementor\Controls_Manager::CHOOSE,
+				'options' => [
+					'flex-start' => [
+						'title' => __( 'Left', 'OBPress_Contact_Form' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'OBPress_Contact_Form' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'flex-end' => [
+						'title' => __( 'Right', 'OBPress_Contact_Form' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'center',
+				'selectors' => [
+					'.obpress-contact-form-holder .obpress-contact-submit' => 'align-self: {{VALUE}}',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
