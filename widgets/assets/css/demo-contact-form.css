@@ -1,5 +1,6 @@
 .obpress-contact-form-holder {
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 50px;
 }
 
 .obpress-contact-form {
@@ -9,29 +10,45 @@
 
 .obpress-input-holder {
   margin-bottom: 33px;
+  position: relative;
+}
+
+.obpress-contact-form-title {
+  font-size: 48px;
+  text-align: center;
 }
 
 .obpress-input-holder input {
   width: 100%;
-  border: 1px solid #c5c5c5;
   border-radius: 0px;
-  padding: 13.81px 16px 13.19px 16px;
+  border: 0px;
+  border-bottom: 2px solid #9d9d9d;
+  padding: 13px 16px 13px 16px;
   font-size: 14px;
-  font-weight: 600;
   line-height: 1;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #eee;
 }
 
 .obpress-input-holder textarea {
   width: 100%;
+  border-radius: 0px;
+  border: 0px;
+  border-bottom: 2px solid #9d9d9d;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #eee;
+  padding: 13px 16px;
 }
 
 .obpress-input-split-holder {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
-.obpress-input-split-holder input {
-  width: 48%;
+.obpress-input-split-holder  > div {
+   flex: 1;
 }
 
 .hotels_dropdown {
@@ -39,7 +56,23 @@
 }
 
 .hotels_dropdown {
-  width: 280px;
+  position: static;
+  width: 100%;
+  max-height: 240px;
+  z-index: 12;
+  overflow: overlay;
+  color: #212529;
+  background: #f5f5f5;
+  font-size: 14px;
+  display: none;
+}
+
+.hotels_dropdown {
+  display: none;
+}
+
+.hotels_dropdown {
+  width: 100%;
   max-height: 336px;
   z-index: 12;
   overflow: overlay;
@@ -48,9 +81,10 @@
   background: #f5f5f5;
   font-size: 14px;
   display: none;
-  top: 200px;
+  top: 44px;
   left: 0px;
 }
+
 
 .hotels_dropdown::-webkit-scrollbar {
   width: 12px;
@@ -120,6 +154,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+#obpress-contact-form-name-warning , #obpress-contact-form-email-warning , 
+#obpress-contact-form-phone-warning , #obpress-contact-form-message-warning ,
+#obpress-contact-form-success {
+  display: none;
+  padding-top: 10px;
+}
+
+
+#obpress-contact-form-success {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 16px;
+  color: #33c40b;
+}
+
 
 /* MOBILE */ 
 @media(max-width: 1279px) {
