@@ -159,6 +159,7 @@
   border-width: 0px;
   max-width: 231px;
   width: fit-content;
+  align-self: center;
   /* margin-left: auto;
   margin-right: auto; */
 }
