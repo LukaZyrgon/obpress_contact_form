@@ -150,6 +150,8 @@
 .obpress-contact-submit {
   background-color: #000000;
   padding: 16px 29px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: bold;
   color: #ffffff;
   letter-spacing: 2.8px;
@@ -159,6 +161,11 @@
   width: fit-content;
   /* margin-left: auto;
   margin-right: auto; */
+}
+
+.obpress-contact-submit.custom_width {
+  width: 100%;
+  max-width: 100%;
 }
 
 #obpress-contact-form-name-warning , #obpress-contact-form-email-warning , 

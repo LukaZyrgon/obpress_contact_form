@@ -35,7 +35,7 @@
             <span id="obpress-contact-form-message-warning"><?php _e('Enter your message', 'OBPress_Contact_Form') ?></span>
         </div>
 
-        <button class="obpress-contact-submit" type="submit"><?php _e('Submit', 'OBPress_Contact_Form') ?></button>
+        <button class="obpress-contact-submit <?= $settings['custom_button_width']; ?>" type="submit"><?php _e('Submit', 'OBPress_Contact_Form') ?></button>
         <span id="obpress-contact-form-success"><?php _e('Your message has been succesfully sent', 'OBPress_Contact_Form') ?></span>
 
     </form>
