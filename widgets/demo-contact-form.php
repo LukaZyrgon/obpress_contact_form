@@ -75,12 +75,20 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'form_inputs_margin',
 			[
 				'label' => __( 'Inputs Margin', 'OBPress_Contact_Form' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '33',
+					'left' => '0',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '33',
@@ -120,12 +128,20 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'form_inputs_border_radius',
 			[
 				'label' => __( 'Inputs Border Radius', 'OBPress_Contact_Form' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0',
+					'isLinked' => true
+				],
+				'mobile_default' => [
 					'top' => '0',
 					'right' => '0',
 					'bottom' => '0',
@@ -139,12 +155,20 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'form_inputs_padding',
 			[
 				'label' => __( 'Inputs Padding', 'OBPress_Contact_Form' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '14',
+					'right' => '16',
+					'bottom' => '13',
+					'left' => '16',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '14',
 					'right' => '16',
 					'bottom' => '13',
@@ -242,7 +266,9 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 						'icon' => 'eicon-text-align-right',
 					],
 				],
-				'default' => 'center',
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => 'center',
+				'mobile_default' => 'center',
 				'selectors' => [
 					'.obpress-contact-form-holder .obpress-contact-submit' => 'align-self: {{VALUE}}',
 				],
@@ -261,7 +287,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'custom_button_width_slider',
 			[
 				'label' => esc_html__( 'Width', 'OBPress_Contact_Form' ),
@@ -274,7 +300,12 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 						'step' => 1,
 					],
 				],
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'unit' => '%',
+					'size' => 20,
+				],
+				'mobile_default' => [
 					'unit' => '%',
 					'size' => 20,
 				],
@@ -287,12 +318,20 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'button_padding',
 			[
 				'label' => __( 'Padding', 'OBPress_Contact_Form' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'default' => [
+				'devices' => [ 'desktop', 'mobile' ],
+				'desktop_default' => [
+					'top' => '16',
+					'right' => '29',
+					'bottom' => '16',
+					'left' => '29',
+					'isLinked' => false
+				],
+				'mobile_default' => [
 					'top' => '16',
 					'right' => '29',
 					'bottom' => '16',
