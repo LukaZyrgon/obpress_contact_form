@@ -36,7 +36,7 @@
         </div>
 
         <button class="obpress-contact-submit <?= $settings['custom_button_width']; ?>" type="submit"><?php _e('Submit', 'OBPress_Contact_Form') ?></button>
-        <span id="obpress-contact-form-success"><?php _e('Your message has been succesfully sent', 'OBPress_Contact_Form') ?></span>
+        <span id="obpress-contact-form-success"><?php _e('Your message has been successfully sent', 'OBPress_Contact_Form') ?></span>
 
     </form>
 </div>
