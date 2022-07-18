@@ -121,7 +121,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 						],
 					],
 					'color' => [
-						'default' => '#c5c5c5',
+						'default' => '#000000',
 					],
 				],
 				'selector' => '.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea',
@@ -188,7 +188,7 @@ class Demo_Contact_Form extends \Elementor\Widget_Base
 				'label' => __('Inputs Background Color', 'OBPress_Contact_Form'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
-				'default' => '#fff',
+				'default' => '#EEEEEE',
 				'selectors' => [
 					'.obpress-contact-form-holder .obpress-input-holder input, .obpress-contact-form-holder .obpress-input-holder textarea' => 'background-color: {{form_inputs_bg_color}}',
 				],

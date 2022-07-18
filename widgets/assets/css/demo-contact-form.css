@@ -28,6 +28,9 @@
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   background-color: #eee;
+  border-top-color: transparent!important;
+  border-right-color: transparent!important;
+  border-left-color: transparent!important;
 }
 
 .obpress-input-holder textarea {
@@ -40,10 +43,19 @@
   font-family: "Montserrat", sans-serif;
   background-color: #eee;
   padding: 13px 16px;
+  border-top-color: transparent!important;
+  border-right-color: transparent!important;
+  border-left-color: transparent!important;
+  transition: 0.1s ease-out;
 }
 
 .obpress-input-holder textarea:focus-visible {
   outline: none;
+}
+
+.obpress-input-holder .label-title {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .obpress-input-split-holder {
@@ -57,26 +69,6 @@
 }
 
 .hotels_dropdown {
-  display: none;
-}
-
-.hotels_dropdown {
-  position: static;
-  width: 100%;
-  max-height: 240px;
-  z-index: 12;
-  overflow: overlay;
-  color: #212529;
-  background: #f5f5f5;
-  font-size: 14px;
-  display: none;
-}
-
-.hotels_dropdown {
-  display: none;
-}
-
-.hotels_dropdown {
   width: 100%;
   max-height: 336px;
   z-index: 12;
@@ -86,7 +78,7 @@
   background: #f5f5f5;
   font-size: 14px;
   display: none;
-  top: 44px;
+  top: 47px;
   left: 0px;
 }
 
@@ -129,7 +121,8 @@
   background-position-y: center;
   background-position-x: 42px;
   font-family: "Montserrat";
-  background-color: #fff !important;
+  /* background-color: #fff !important; */
+  cursor: pointer;
 }
 
 .hotels_all,
@@ -164,6 +157,17 @@
   margin-right: auto; */
 }
 
+.obpress-contact-submit[disabled] {
+  background-color: #C5C5C5;
+  color: #E6E6E6;
+}
+
+.obpress-contact-submit[disabled]:hover {
+  background-color: #C5C5C5;
+  color: #E6E6E6;
+  cursor: no-drop;
+}
+
 .obpress-contact-submit.custom_width {
   width: 100%;
   max-width: 100%;
@@ -184,7 +188,107 @@
   color: #33c40b;
 }
 
+/*MATERIAL TEXTFIELD OUTLINE*/
+.material-textfield {
+  position: relative;  
+}
 
+.material-textfield .label-title {
+	position: absolute;
+	left: 0;
+	top: 25px;
+	transform: translateY(-50%);
+	background-color: transparent;
+	padding: 0 0.3rem;
+	margin: 0 0.5rem;
+	transition: .1s ease-out;
+	transform-origin: left top;
+	pointer-events: none;
+}
+
+
+.material-textfield input {
+	outline: none;
+	border: 1px solid #C5C5C5;
+	border-radius: 2px;  
+	padding: 13.81px 16px 13.19px 16px;
+	transition: 0.1s ease-out;
+	font-family: Manrope;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	color: #273240;
+	background-color: #ffffff;
+}
+
+/*.material-textfield input:hover:not(#input-cpf, #input-id, #input-phone, #input-name[disabled], #input-lastname[disabled]) {
+  	border: 1px solid #273240!important;
+}*/
+
+.material-textfield input:hover:not(input[disabled], .country-disabled) {
+  	border: 1px solid #000!important;
+    background-color: #ffffff;
+}
+
+.material-textfield input:focus {
+  	border-color: #273240;  
+    box-shadow: none;
+    background-color: #fff;
+}
+.material-textfield input:focus:not(.country-disabled) ~ .label-title {
+	color: #7d848c;
+	top: 0;
+	transform: translateY(-50%) scale(.9);
+	background-color: #fff;
+}
+
+.material-textfield input:focus:not(.country-disabled) {
+  border: 1px solid #000!important;
+}
+
+.material-textfield #input-id:focus ~ .label-title, .material-textfield #input-cpf:focus ~ .label-title {
+	color: #7d848c;
+	top: 0;
+	/* left: -114px; */
+	left: 0;
+	transform: translateY(-50%) scale(.9);
+}
+.material-textfield input:focus:not(.country-disabled) ~ .label-title .red-asterix {
+	display: none;
+}
+.material-textfield input:not(:placeholder-shown) {
+  background-color: #ffffff;
+  border-color: #000!important;
+}
+.material-textfield input:not(:placeholder-shown) ~ .label-title {
+	color: #7d848c;
+	top: 0;
+	transform: translateY(-50%) scale(.9);
+	background-color: #fff;
+}
+
+.material-textfield #input-id:not(:placeholder-shown) ~ .label-title, .material-textfield #input-cpf:not(:placeholder-shown) ~ .label-title  {
+	color: #7d848c;
+	top: 0;
+	/*left: -114px;*/
+	left: 0;
+	transform: translateY(-50%) scale(.9);
+}
+
+.material-textfield input:not(:placeholder-shown) ~ .label-title .red-asterix {
+	display: none;
+}
+
+.red-asterix {
+	color: #FF0000;
+}
+
+.obpress-contact-form-holder .obpress-input-holder textarea:focus,
+.obpress-contact-form-holder .obpress-input-holder textarea:not(:placeholder-shown),
+.obpress-contact-form-holder .obpress-input-holder textarea:hover {
+  background-color: #fff;
+  border: 1px solid #000000!important;
+}
 /* MOBILE */ 
 @media(max-width: 1279px) {
 

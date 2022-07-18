@@ -232,7 +232,7 @@ jQuery(window).on("elementor/frontend/init", function () {
       getFolderChildren(null, 0);
 
       $("#hotels").click(function () {
-        var dropdown = $(this).parent().find(".hotels_dropdown");
+        var dropdown = $(this).closest('.obpress-input-holder').find(".hotels_dropdown");
         if (dropdown.css("display") == "none") {
           dropdown.find("*").removeClass("d-none");
           dropdown.slideDown(200);
@@ -252,11 +252,27 @@ jQuery(window).on("elementor/frontend/init", function () {
         if (!box.is(e.target) && box.has(e.target).length === 0) {
           box.slideUp(200);
         }
+
+        if(inputClicked == true) {
+          var form = $('.material-textfield');
+          if (!form.is(e.target) && form.has(e.target).length === 0) {
+            if(inputErrors == false && (isEmail($('.email-input').val()) == true && $('.email-input').val() != '') && (isPhone($('.phone-input').val()) == true && $('.phone-input').val() != '') && $(".message-input").val().length > 0) {
+              inputsValidation();
+            }
+          }
+        }
+        
       });
 
+      function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+      }
 
-
-
+      function isPhone(phone) {
+        var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        return regex.test(phone);
+      }
 
 
       // check if every input is corret and send mail
@@ -264,16 +280,11 @@ jQuery(window).on("elementor/frontend/init", function () {
 
           e.preventDefault();
 
-          $(".obpress-contact-form span").hide();
+          $(".obpress-contact-form .obpress-erorr-holder").hide();
           var action = "send_mail";
           var data = {};
           data.action = action;
           var errors = false;
-
-          function isEmail(email) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return regex.test(email);
-          }
 
           if ( $('.name-input').val() == "" ) {
             $("#obpress-contact-form-name-warning").css("display","inline-block");
@@ -317,18 +328,129 @@ jQuery(window).on("elementor/frontend/init", function () {
 
       });
 
+      var inputErrors = false;
+      function inputsValidation() {
 
+        if ($('.name-input').val() == "") {
+          $("#obpress-contact-form-name-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-name-warning").hide();
+        }
 
+        if(isPhone($('.phone-input').val()) == false && $('.phone-input').val() == '') {
+          $("#obpress-contact-form-phone-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-phone-warning").hide();
+        }
 
+        if (isEmail($('.email-input').val()) == false && $('.email-input').val() == '')  {
+          $("#obpress-contact-form-email-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-email-warning").hide();
+        }
 
+        if ($(".message-input").val().length == 0) {  
+          $("#obpress-contact-form-message-warning").css("display","inline-block");   
+          inputErrors = true;    
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-message-warning").hide();  
+        }
 
+        if(inputErrors == false) {
+          $('.obpress-contact-submit').prop('disabled', false);
+        } else {
+          $('.obpress-contact-submit').prop('disabled', true);
+        }
 
+      }
 
+      $("#input-name").on('keypress', function(event) {
+        var inputValue = event.charCode;
+        if(!((inputValue > 64 && inputValue < 91) || (inputValue > 96 && inputValue < 123)||(inputValue==32) || (inputValue==0))){
+            event.preventDefault();
+        }
+      })
+      
+      $(document).on('keyup', '#input-name', function() {
 
+        if ($(this).val() == "") {
+          $("#obpress-contact-form-name-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-name-warning").hide();
+        }
 
+        if(inputErrors == false && (isEmail($('.email-input').val()) == true && $('.email-input').val() != '') && (isPhone($('.phone-input').val()) == true && $('.phone-input').val() != '') && $(".message-input").val().length > 0) {
+          $('.obpress-contact-submit').prop('disabled', false);
+        } else {
+          $('.obpress-contact-submit').prop('disabled', true);
+        }
 
+      });
 
+      $(document).on('keyup', '#input-email', function() {
 
+        if (isEmail($(this).val()) == false)  {
+          $("#obpress-contact-form-email-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-email-warning").hide();
+        }
+
+        if(inputErrors == false && (isEmail($('.email-input').val()) == true && $('.email-input').val() != '') && (isPhone($('.phone-input').val()) == true && $('.phone-input').val() != '') && $(".message-input").val().length > 0) {
+          $('.obpress-contact-submit').prop('disabled', false);
+        } else {
+          $('.obpress-contact-submit').prop('disabled', true);
+        }
+
+      })
+
+      $(document).on('keyup', '#input-phone', function() {
+
+        if(isPhone($(this).val()) == false) {
+          $("#obpress-contact-form-phone-warning").css("display","inline-block");
+          inputErrors = true;
+        } else {
+          inputErrors = false;
+          $("#obpress-contact-form-phone-warning").hide();
+        }
+
+        if(inputErrors == false && (isEmail($('.email-input').val()) == true && $('.email-input').val() != '') && (isPhone($('.phone-input').val()) == true && $('.phone-input').val() != '') && $(".message-input").val().length > 0) {
+          $('.obpress-contact-submit').prop('disabled', false);
+        } else {
+          $('.obpress-contact-submit').prop('disabled', true);
+        }
+      });
+
+      $(document).on('keyup', '#message', function() {
+        if ($(this).val().length == 0) {  
+          $("#obpress-contact-form-message-warning").css("display","inline-block");   
+          inputErrors = true;    
+        } else {
+          inputErrors = false;  
+          $("#obpress-contact-form-message-warning").hide();  
+        }
+        if(inputErrors == false && (isEmail($('.email-input').val()) == true && $('.email-input').val() != '') && (isPhone($('.phone-input').val()) == true && $('.phone-input').val() != '') && $(".message-input").val().length > 0) {
+          $('.obpress-contact-submit').prop('disabled', false);
+        } else {
+          $('.obpress-contact-submit').prop('disabled', true);
+        }
+
+      })
+
+      var inputClicked = false;
+      $(document).on('click', '#input-name, #input-email, #input-email, #hotels, #message', function() {
+        inputClicked = true;
+      });
 
 
     }
